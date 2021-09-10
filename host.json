@@ -1,0 +1,26 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    }
+  },
+  "customHandler": {
+    "description": {
+      "defaultExecutablePath": "minimalappbin\\minimalapp.exe",
+      "workingDirectory": "minimalappbin",
+      "arguments": [
+        "--urls=http://localhost:%FUNCTIONS_CUSTOMHANDLER_PORT%"
+      ]
+    },
+    "enableForwardingHttpRequest": true
+  },
+  "extensions": {
+    "http": {
+      "routePrefix": ""
+    }
+  }
+}
